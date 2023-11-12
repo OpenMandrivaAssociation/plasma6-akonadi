@@ -38,6 +38,8 @@ BuildRequires:	cmake(KF6DBusAddons)
 BuildRequires:	cmake(KF6ItemModels)
 BuildRequires:	cmake(KF6GuiAddons)
 BuildRequires:	cmake(KF6IconThemes)
+# FIXME why doesn't this have a cmake(KF6IconWidgets) provide?
+BuildRequires:	%mklibname KF6IconWidgets -d 
 BuildRequires:	cmake(KF6WindowSystem)
 BuildRequires:	cmake(KF6Completion)
 BuildRequires:	cmake(KF6Crash)
