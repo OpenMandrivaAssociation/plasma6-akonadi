@@ -64,9 +64,9 @@ Requires:	mariadb-common
 Requires:	mariadb-server
 # Needed for mysqlcheck  which is used in akonadi
 Requires:	mariadb-client
-Requires:	qt6-qtbase-database-plugin-mysql
+Requires:	qt6-qtbase-sql-mysql
 %else
-Requires:	qt6-qtbase-database-plugin-sqlite
+Requires:	qt6-qtbase-sql-sqlite
 %endif
 # For QCH format docs
 BuildRequires: doxygen
