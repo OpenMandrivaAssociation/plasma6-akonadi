@@ -3,7 +3,7 @@
 
 Summary:	An extensible cross-desktop storage service for PIM
 Name:		plasma6-akonadi
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
 License:	LGPLv2+
 Group:		Networking/WWW
@@ -167,6 +167,7 @@ based on %{name}
 %install
 %ninja_install -C build
 
-%find_lang libakonadi5
+%find_lang libakonadi6
 %find_lang akonadi_knut_resource
+%find_lang akonadi-db-migrator
 cat *.lang >akonadi.lang
