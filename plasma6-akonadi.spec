@@ -3,7 +3,7 @@
 
 Summary:	An extensible cross-desktop storage service for PIM
 Name:		plasma6-akonadi
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 License:	LGPLv2+
 Group:		Networking/WWW
@@ -51,7 +51,7 @@ BuildRequires:	cmake(PythonInterp)
 BuildRequires:	boost-devel
 BuildRequires:	cmake(SharedMimeInfo)
 BuildRequires:	cmake(LibXslt)
-BuildRequires:	cmake(KAccounts)
+BuildRequires:	cmake(KAccounts6)
 BuildRequires:	pkgconfig(libaccounts-glib)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(mariadb)
