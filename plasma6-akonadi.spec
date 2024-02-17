@@ -1,15 +1,23 @@
 # Use mariadb instead of sqlite
 %bcond_with mariadb
 
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e 's,/,-,g')
+
 Summary:	An extensible cross-desktop storage service for PIM
 Name:		plasma6-akonadi
-Version:	24.01.95
+Version:	24.01.96
 Release:	1
 License:	LGPLv2+
 Group:		Networking/WWW
 Url:		http://pim.kde.org/akonadi/
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/akonadi/-/archive/%{gitbranch}/akonadi-%{gitbranchd}.tar.bz2
+%else
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/akonadi-%{version}.tar.xz
+%endif
 BuildRequires:	libxml2-utils
 BuildRequires:	shared-mime-info >= 0.20
 BuildRequires:	xsltproc
@@ -111,19 +119,14 @@ Akonadi Widgets for Qt Designer
 #------------------------------------------------------
 
 %libpackage KPim6AkonadiAgentBase 6
-%{_libdir}/libKPim6AkonadiAgentBase.so.5*
 
 %libpackage KPim6AkonadiCore 6
-%{_libdir}/libKPim6AkonadiCore.so.5*
 
 %libpackage KPim6AkonadiWidgets 6
-%{_libdir}/libKPim6AkonadiWidgets.so.5*
 
 %libpackage KPim6AkonadiXml 6
-%{_libdir}/libKPim6AkonadiXml.so.5*
 
 %libpackage KPim6AkonadiPrivate 6
-%{_libdir}/libKPim6AkonadiPrivate.so.5*
 
 #------------------------------------------------------
 
@@ -152,7 +155,7 @@ based on %{name}
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n akonadi-%{version}
+%autosetup -p1 -n akonadi-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 %if ! %{with mariadb}
 	-DDATABASE_BACKEND=SQLITE \
