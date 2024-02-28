@@ -1,13 +1,13 @@
 # Use mariadb instead of sqlite
 %bcond_with mariadb
 
-%define git 20240217
+#define git 20240217
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e 's,/,-,g')
 
 Summary:	An extensible cross-desktop storage service for PIM
 Name:		plasma6-akonadi
-Version:	24.01.96
+Version:	24.02.0
 Release:	1
 License:	LGPLv2+
 Group:		Networking/WWW
