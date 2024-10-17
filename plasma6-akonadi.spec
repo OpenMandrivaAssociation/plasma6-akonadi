@@ -11,7 +11,7 @@ Version:	24.08.2
 Release:	1
 License:	LGPLv2+
 Group:		Networking/WWW
-Url:		http://pim.kde.org/akonadi/
+Url:		https://pim.kde.org/akonadi/
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/akonadi/-/archive/%{gitbranch}/akonadi-%{gitbranchd}.tar.bz2
 %else
