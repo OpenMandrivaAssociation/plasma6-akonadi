@@ -7,8 +7,8 @@
 
 Summary:	An extensible cross-desktop storage service for PIM
 Name:		plasma6-akonadi
-Version:	24.08.3
-Release:	2
+Version:	24.12.0
+Release:	1
 License:	LGPLv2+
 Group:		Networking/WWW
 Url:		https://pim.kde.org/akonadi/
